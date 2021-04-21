@@ -97,6 +97,7 @@ public class UserServiceImpl
         {
             newUser = userrepos.findById(user.getUserid())
                 .orElseThrow(() -> new ResourceNotFoundException("User id " + user.getUserid() + " not found!"));
+            newUser.setUserid(user.getUserid());
         }
 
         newUser.setUsername(user.getUsername()
